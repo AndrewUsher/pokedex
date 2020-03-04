@@ -1,4 +1,5 @@
 const path = require('path')
+const { POKEMON_TYPES } = require('./src/constants')
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -56,6 +57,16 @@ exports.createPages = ({ graphql, actions }) => {
       context: {
         data: result.data.pokemon.pokemons
       }
+    })
+
+    POKEMON_TYPES.forEach(type => {
+      createPage({
+        path: `/${type.toLowerCase()}`,
+        component: pokemonList,
+        context: {
+          data: result.data.pokemon.pokemons.filter(pokemon => pokemon.types.includes(type))
+        }
+      })
     })
     result.data.pokemon.pokemons.forEach(pokemon => {
       createPage({
