@@ -1,56 +1,43 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+const renderType = (type) => (
+  <Link to={`/${type.toLowerCase()}`} key={type}>
+    <span className={`type ${type.toLowerCase()}`}>{type}</span>
+  </Link>
+)
+
+const renderTypes = ({ heading, types }) => types && (
+  <>
+    {heading && <h2>{heading}</h2>}
+    {types.map(renderType)}
+  </>
+)
+
 const SinglePokemon = ({ pageContext: { data: pokemon } }) => {
   const { evolutions, image, maxCP, maxHP, name, resistant, types, weaknesses, ...rest } = pokemon
   console.log(evolutions, rest)
   return (
     <article className="card pokemon-container">
       <h1>{name}</h1>
+      {renderTypes({ types })}
       <div className="image-container">
         <img src={image} alt={name}/>
       </div>
       <h3>Max CP: {maxCP}</h3>
       <h3>Max HP: {maxHP}</h3>
-      {types && (
-        <div className="types-container">
-          {types.map(type => (
-            <span key={type} className={`type ${type.toLowerCase()}`}>{type}</span>
-          ))}
-        </div>
-      )}
-      {resistant && (
-        <>
-          <h2>Resistances</h2>
-          <div className="evolution-container">
-            {resistant.map(resistance => (
-              <span key={resistance} className={`type ${resistance.toLowerCase()}`}>{resistance}</span>
-            ))}
-          </div>
-        </>
-      )}
-      {weaknesses && (
-        <>
-          <h2>Weaknesses</h2>
-          <div className="evolution-container">
-            {weaknesses.map(resistance => (
-              <span key={resistance} className={`type ${resistance.toLowerCase()}`}>{resistance}</span>
-            ))}
-          </div>
-        </>
-      )}
+      {renderTypes({ heading: 'Resistances', types: resistant })}
+      {renderTypes({ heading: 'Weaknessess', types: weaknesses })}
       {evolutions && (
         <>
           <h2>Evolutions</h2>
           <div className="evolution-container">
             {evolutions.map(evolution => (
               <Link to={`/${evolution.name.toLowerCase()}`} key={evolution.name}>
-                <div className="evolution-card" >
+                <div className="evolution-card">
                   <h3>{evolution.name}</h3>
                   <div className="types-container">
-                    {evolution.types.map(type => (
-                      <span key={type} className={`type ${type.toLowerCase()}`}>{type}</span>
-                    ))}
+                    {evolution.types.map(renderType)}
                   </div>
                   <img src={evolution.image} alt={evolution.name} />
                 </div>
