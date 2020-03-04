@@ -32,15 +32,17 @@ const SinglePokemon = ({ pageContext: { data: pokemon } }) => {
           <h2>Evolutions</h2>
           <div className="evolution-container">
             {evolutions.map(evolution => (
-              <Link to={`/${evolution.name.toLowerCase()}`} key={evolution.name}>
+              <>
                 <div className="evolution-card">
-                  <h3>{evolution.name}</h3>
+                  <Link to={`/${evolution.name.toLowerCase()}`} key={evolution.name}>
+                    <h3>{evolution.name}</h3>
+                  </Link>
                   <div className="types-container">
                     {evolution.types.map(renderType)}
                   </div>
                   <img src={evolution.image} alt={evolution.name} />
                 </div>
-              </Link>
+              </>
             ))}
           </div>
         </>

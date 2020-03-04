@@ -4,71 +4,55 @@ const { POKEMON_TYPES } = require('./src/constants')
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const pokemonList = path.resolve('./src/templates/PokemonList.js')
+  const PokemonList = path.resolve('./src/templates/PokemonList.js')
   const SinglePokemon = path.resolve('./src/templates/SinglePokemon.js')
 
   return graphql(
     `
     {
-  pokemon {
-    pokemons(first: 151) {
-      attacks {
-        fast {
+      pokemon {
+        pokemons(first: 151) {
           name
+          weaknesses
+          types
+          resistant
+          image
+          maxCP
+          maxHP
+          evolutions {
+            image
+            name
+            types
+          }
         }
-        special {
-          name
-          type
-        }
-      }
-      name
-      weaknesses
-      types
-      resistant
-      number
-      maxCP
-      image
-      maxHP
-      height {
-        minimum
-        maximum
-      }
-      weight {
-        minimum
-        maximum
-      }
-      evolutions {
-        image
-        name
-        types
       }
     }
-  }
-}
     `
   ).then(result => {
     if (result.errors) {
       throw result.errors
     }
 
+    const { data: { pokemon: { pokemons: pokemonList } } } = result
+
     createPage({
       path: '/',
-      component: pokemonList,
+      component: PokemonList,
       context: {
-        data: result.data.pokemon.pokemons
+        data: pokemonList
       }
     })
 
     POKEMON_TYPES.forEach(type => {
       createPage({
         path: `/${type.toLowerCase()}`,
-        component: pokemonList,
+        component: PokemonList,
         context: {
-          data: result.data.pokemon.pokemons.filter(pokemon => pokemon.types.includes(type))
+          data: pokemonList.filter(pokemon => pokemon.types.includes(type))
         }
       })
     })
-    result.data.pokemon.pokemons.forEach(pokemon => {
+    pokemonList.forEach(pokemon => {
       createPage({
         path: `/${pokemon.name.toLowerCase()}`,
         component: SinglePokemon,
