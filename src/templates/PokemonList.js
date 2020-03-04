@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import './PokemonList.css'
 
 const PokemonList = ({ pageContext: { data: pokemonList } }) => {
   return (
