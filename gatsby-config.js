@@ -13,6 +13,12 @@ module.exports = {
         // Url to query from
         url: 'https://graphql-pokemon.now.sh/'
       }
+    },
+    {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: 'src/utils/typography'
+      }
     }
   ]
 
