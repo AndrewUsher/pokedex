@@ -5,7 +5,8 @@
   "license": "MIT",
   "dependencies": {
     "gatsby": "^2.19.12",
-    "graphql": "^14.6.0",
+    "gatsby-source-graphql": "^2.1.33",
+    "global-agent": "^2.1.8",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
