@@ -2,8 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import './PokemonList.css'
 
-const PokemonList = ({ pageContext: { data: pokemonList }, navigate }) => {
-  console.log(pokemonList)
+const PokemonList = ({ pageContext: { data: pokemonList } }) => {
   return (
     <section className="container">
       {pokemonList.map(pokemon => (

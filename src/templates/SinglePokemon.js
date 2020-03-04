@@ -15,8 +15,7 @@ const renderTypes = ({ heading, types }) => types && (
 )
 
 const SinglePokemon = ({ pageContext: { data: pokemon } }) => {
-  const { evolutions, image, maxCP, maxHP, name, resistant, types, weaknesses, ...rest } = pokemon
-  console.log(evolutions, rest)
+  const { evolutions, image, maxCP, maxHP, name, resistant, types, weaknesses } = pokemon
   return (
     <article className="card pokemon-container">
       <h1>{name}</h1>
