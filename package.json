@@ -10,8 +10,8 @@
     "gatsby-source-graphql": "^2.1.33",
     "global-agent": "^2.1.8",
     "node-sass": "^4.13.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",
     "typography-theme-grand-view": "^0.16.19"
