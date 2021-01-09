@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "gatsby": "^2.19.12",
-    "gatsby-plugin-sass": "^2.2.1",
+    "gatsby-plugin-sass": "^3.0.0",
     "gatsby-plugin-typography": "^2.3.22",
     "gatsby-source-graphql": "^2.1.33",
     "global-agent": "^2.1.8",
