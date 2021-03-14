@@ -1,5 +1,6 @@
 {
-  "name": "gatsby-minimal-boilerplate",
+  "name": "pokedex",
+  "description": "This is a pokedex populated with all of the pokemon from Gen 1.",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
