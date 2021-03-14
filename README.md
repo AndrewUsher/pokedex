@@ -2,6 +2,9 @@
 
 This is a pokedex populated with all of the pokemon from Gen 1.
 
+![homepage](readme-screens/homescreen.png)
+![homepage](readme-screens/pokemon-screen.png)
+
 
 ## Runnning Locally
 
