@@ -8,7 +8,7 @@ module.exports = {
       options: {
         typeName: 'POKEMON',
         fieldName: 'pokemon',
-        url: 'https://graphql-pokemon.now.sh/'
+        url: 'https://graphql-pokemon2.vercel.app/'
       }
     },
     {
