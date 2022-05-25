@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Link } from 'gatsby'
 import { Layout } from '../components/Layout'
 
@@ -34,7 +34,7 @@ const SinglePokemon = ({ pageContext: { data: pokemon } }) => {
             <h2>Evolutions</h2>
             <div className="evolution-container">
               {evolutions.map(evolution => (
-                <>
+                <Fragment key={evolution.name}>
                   <div className="evolution-card">
                     <Link to={`/${evolution.name.toLowerCase()}`} key={evolution.name}>
                       <h3>{evolution.name}</h3>
@@ -44,7 +44,7 @@ const SinglePokemon = ({ pageContext: { data: pokemon } }) => {
                     </div>
                     <img src={evolution.image} alt={evolution.name} />
                   </div>
-                </>
+                </Fragment>
               ))}
             </div>
           </>
