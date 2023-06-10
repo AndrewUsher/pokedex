@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "gatsby": "4.15.1",
+    "gatsby": "4.25.7",
     "gatsby-plugin-sass": "5.15.0",
     "gatsby-plugin-typography": "4.15.0",
     "gatsby-source-graphql": "4.15.0",
