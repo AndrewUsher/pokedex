@@ -12,9 +12,9 @@
     "global-agent": "3.0.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-typography": "0.16.20",
+    "react-typography": "0.16.23",
     "sass": "1.52.1",
-    "typography": "0.16.21",
+    "typography": "0.16.24",
     "typography-theme-grand-view": "0.16.19"
   },
   "scripts": {
