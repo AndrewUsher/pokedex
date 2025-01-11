@@ -1,6 +1,7 @@
-require('global-agent/bootstrap')
+import { GatsbyConfig } from 'gatsby'
 
-module.exports = {
+export default {
+  graphqlTypegen: true,
   polyfill: false,
   plugins: [
     {
@@ -19,5 +20,4 @@ module.exports = {
     },
     'gatsby-plugin-sass'
   ]
-
-}
+} satisfies GatsbyConfig
