@@ -8,7 +8,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
 }) => {
   const { createPage } = actions
 
-  const PokemonList = path.resolve('./src/templates/PokemonList.js')
+  const PokemonList = path.resolve('./src/templates/PokemonList.tsx')
   const SinglePokemon = path.resolve('./src/templates/SinglePokemon.js')
 
   const result = await graphql<any>(
@@ -45,7 +45,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
     path: '/',
     component: PokemonList,
     context: {
-      data: pokemonList
+      data: result.data
     }
   })
 
