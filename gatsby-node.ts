@@ -44,9 +44,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
   createPage({
     path: '/',
     component: PokemonList,
-    context: {
-      data: result.data
-    }
+    context: result.data
   })
 
   POKEMON_TYPES.forEach((type) => {
