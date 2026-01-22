@@ -13,7 +13,7 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-typography": "0.16.23",
-    "sass": "1.83.1",
+    "sass": "1.97.3",
     "typography": "0.16.24",
     "typography-theme-grand-view": "0.16.19"
   },
