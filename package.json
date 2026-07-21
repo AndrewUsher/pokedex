@@ -10,7 +10,7 @@
     "gatsby-plugin-typography": "5.16.0",
     "gatsby-source-graphql": "5.16.0",
     "global-agent": "3.0.0",
-    "react": "19.2.7",
+    "react": "19.2.8",
     "react-dom": "19.2.7",
     "react-typography": "0.16.23",
     "sass": "1.100.0",
